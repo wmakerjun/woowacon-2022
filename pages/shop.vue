@@ -15,7 +15,7 @@
             <div>
               <v-card-subtitle class="pa-0"> 남은 포인트 </v-card-subtitle>
               <v-card-title class="text-h4 font-weight-bold pa-0"
-                >1000P</v-card-title
+                >{{ myPoint }}P</v-card-title
               >
             </div>
           </div>
@@ -23,19 +23,13 @@
       </v-card>
     </div>
 
+    <v-row justify="center" align="center" class="mx-4">
+      <v-col v-for="(item, index) in items" cols="6" class="pa-2">
+        <v-img :src="item.link" @click="buyItem(index)" />
+      </v-col>
+    </v-row>
+
     <v-dialog v-model="dialog" width="250">
-      <template v-slot:activator="{ on, attrs }">
-        <v-row justify="center" align="center" class="mx-4">
-          <v-col v-for="(item, index) in items" cols="6" class="pa-2">
-            <v-img
-              :src="item.link"
-              @click="getItem(index)"
-              v-bind="attrs"
-              v-on="on"
-            />
-          </v-col>
-        </v-row>
-      </template>
       <v-card class="d-flex justify-center">
         <div class="pa-6">
           <v-img width="100" src="/gift.png" class="mx-auto" />
@@ -49,8 +43,23 @@
 <script>
 export default {
   name: "shop",
+  mounted() {
+    const myPoint = localStorage.getItem("myPoint");
+    if (myPoint && myPoint >= 0) {
+      this.myPoint = myPoint;
+    } else {
+      localStorage.setItem("point", this.myPoint);
+    }
+  },
   methods: {
-    getItem(index) {
+    buyItem(index) {
+      if (this.items[index].price > this.myPoint) {
+        alert("금액이 부족합니다.");
+        return;
+      }
+      this.myPoint = this.myPoint - this.items[index].price;
+      this.setMyPoint();
+      this.dialog = true;
       this.item = this.items[index];
       this.$confetti.start();
       this.$confetti.update({
@@ -68,27 +77,35 @@ export default {
         this.$confetti.stop();
       }, 3000);
     },
+    setMyPoint() {
+      localStorage.setItem("point", this.myPoint);
+    },
   },
   data() {
     return {
       dialog: false,
+      myPoint: 1000,
       item: "",
       items: [
         {
           name: "시원한 맥주",
           link: "item1.png",
+          price: 600,
         },
         {
           name: "배달이 피규어",
           link: "item2.png",
+          price: 1000,
         },
         {
           name: "우아한 후드티",
           link: "item3.png",
+          price: 1500,
         },
         {
           name: "배민 상품권",
           link: "item4.png",
+          price: 600,
         },
       ],
     };

@@ -49,7 +49,7 @@
           <div class="d-flex align-center">
             <div>
               <v-card-title class="text-h4 font-weight-bold font-hanna"
-                >1000P</v-card-title
+                >{{ myPoint }}P</v-card-title
               >
               <v-card-subtitle>
                 응원포인트로 상품을 <br />
@@ -73,8 +73,17 @@
 import { nanoid } from "nanoid";
 
 export default {
+  mounted() {
+    const myPoint = localStorage.getItem("myPoint");
+    if (myPoint && myPoint >= 0) {
+      this.myPoint = myPoint;
+    } else {
+      localStorage.setItem("point", this.myPoint);
+    }
+  },
   data() {
     return {
+      myPoint: 1000,
       item: {
         color: "#1F7087",
         src: "https://cdn.vuetifyjs.com/images/cards/foster.jpg",
