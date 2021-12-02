@@ -7,7 +7,7 @@
     <nuxt-link to="presenter" class="d-flex justify-center">
       <v-btn
         class="presenter-cheer-count black--text"
-        rounded="pill"
+        rounded
         color="primary"
         small
       >
@@ -16,7 +16,7 @@
       </v-btn>
     </nuxt-link>
     <div class="carousel-container py-4">
-      <no-ssr>
+      <client-only>
         <carousel
           :center="true"
           :autoplay="false"
@@ -31,7 +31,7 @@
             </nuxt-link>
           </div>
         </carousel>
-      </no-ssr>
+      </client-only>
     </div>
 
     <div class="mx-5">
