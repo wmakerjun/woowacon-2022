@@ -4,6 +4,17 @@
       <v-img max-width="150" src="/woowacon-main-logo.png"> </v-img>
     </v-container>
 
+    <nuxt-link to="presenter" class="d-flex justify-center">
+      <v-btn
+        class="presenter-cheer-count black--text"
+        rounded="pill"
+        color="primary"
+        small
+      >
+        <v-img width="15" src="/magic.png" />
+        <span> 응원봉 현황 </span>
+      </v-btn>
+    </nuxt-link>
     <div class="carousel-container py-4">
       <no-ssr>
         <carousel
@@ -70,35 +81,30 @@ export default {
         title: "Supermodel",
         artist: "Foster the People",
       },
-      sessionButtons: [
-        {
-          id: nanoid(),
-          name: "Session1",
-        },
-        {
-          id: nanoid(),
-          name: "Session2",
-        },
-        {
-          id: nanoid(),
-          name: "Session3",
-        },
-      ],
       activeBanners: [
         {
           _id: nanoid(),
           url: "/carousel-item1.png",
           type: "Session1",
+          presenter: {
+            name: "조은옥",
+          },
         },
         {
           _id: nanoid(),
           url: "/carousel-item2.png",
           type: "Session1",
+          presenter: {
+            name: "이동렬",
+          },
         },
         {
           _id: nanoid(),
           url: "/carousel-item3.png",
           type: "Session1",
+          presenter: {
+            name: "이상은",
+          },
         },
       ],
     };
@@ -127,4 +133,9 @@ export default {
 .v-application .text-h4 {
   font-family: hanna, "Roboto", sans-serif !important;
 }
+
+//.presenter-cheer-count {
+//  position: absolute;
+//  top: 0;
+//}
 </style>
