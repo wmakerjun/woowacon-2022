@@ -1,0 +1,30 @@
+{
+  "name": "woowacon",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "npm run generate && firebase deploy"
+  },
+  "dependencies": {
+    "@splidejs/vue-splide": "^0.5.14",
+    "canvas-confetti": "^1.4.0",
+    "core-js": "^3.15.1",
+    "nanoid": "^3.1.30",
+    "nuxt": "^2.15.7",
+    "v-owl-carousel": "^1.0.8",
+    "vue-carousel": "^0.18.0",
+    "vue-confetti": "^2.2.2",
+    "vue-confetti-button": "^0.1.0",
+    "vuetify": "^2.5.5"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.1",
+    "sass": "~1.26.11",
+    "sass-loader": "^10.2.0",
+    "webpack": "^4.46.0"
+  }
+}
