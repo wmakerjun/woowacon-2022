@@ -96,4 +96,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.v-application .text-h4 {
+  font-family: hanna, "Roboto", sans-serif !important;
+}
+</style>

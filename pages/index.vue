@@ -37,7 +37,7 @@
           </v-avatar>
           <div class="d-flex align-center">
             <div>
-              <v-card-title class="text-h4 font-weight-bold"
+              <v-card-title class="text-h4 font-weight-bold font-hanna"
                 >1000P</v-card-title
               >
               <v-card-subtitle>
@@ -115,17 +115,16 @@ export default {
   display: none;
 }
 
-.owl-item {
-  //width: 100%;
-}
-
 .owl-stage {
   padding-top: 32px;
   padding-bottom: 40px;
 }
 
 .owl-item.active.center {
-  //width: 300px !important;
   transform: scale(1.4);
+}
+
+.v-application .text-h4 {
+  font-family: hanna, "Roboto", sans-serif !important;
 }
 </style>

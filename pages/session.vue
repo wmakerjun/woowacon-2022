@@ -8,7 +8,8 @@
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-    ></iframe>
+    >
+    </iframe>
     <div class="d-flex justify-center">
       <div class="chat-container">
         <template v-for="message in messages">
@@ -51,7 +52,7 @@
     </div>
     <v-btn
       ref="cheer"
-      class="font-weight-bold w-100 mt-6 cheer-up-button"
+      class="font-weight-bold w-100 mt-6 cheer-up-button text-h6"
       color="primary"
       depressed
       fab
@@ -143,5 +144,15 @@ export default {
 
 .message-card {
   display: inline-block;
+}
+
+.back-nav-button {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+}
+
+.cheer-up-button {
+  font-family: hanna, "Roboto", sans-serif !important;
 }
 </style>
