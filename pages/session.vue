@@ -129,8 +129,8 @@ export default {
 <style lang="scss" scoped>
 .live-chip {
   position: absolute;
-  bottom: 130px;
-  left: 10%;
+  bottom: 140px;
+  left: 7%;
 }
 
 .text-input {
@@ -180,5 +180,71 @@ export default {
   position: absolute;
   right: 6%;
   top: 48px;
+}
+
+.live-chip {
+  -webkit-animation: glowing 5000ms infinite;
+  -moz-animation: glowing 5000ms infinite;
+  -o-animation: glowing 5000ms infinite;
+  animation: glowing 5000ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% {
+    background-color: #b20000;
+    -webkit-box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    -webkit-box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    -webkit-box-shadow: 0 0 3px #b20000;
+  }
+}
+
+@-moz-keyframes glowing {
+  0% {
+    background-color: #b20000;
+    -moz-box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    -moz-box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    -moz-box-shadow: 0 0 3px #b20000;
+  }
+}
+
+@-o-keyframes glowing {
+  0% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
 }
 </style>
