@@ -10,6 +10,19 @@
       allowfullscreen
     >
     </iframe>
+    <v-chip class="my-points" color="primary">
+      <v-img width="20" src="/coin.png" class="mr-1" />
+      <span class="font-weight-bold">{{ myPoint }}</span>
+    </v-chip>
+    <v-btn
+      class="presenter-cheer-count black--text"
+      rounded
+      color="primary"
+      small
+    >
+      <v-img width="15" src="/magic.png" />
+      <span> 응원봉 현황 </span>
+    </v-btn>
     <div class="d-flex justify-center">
       <div class="chat-container">
         <template v-for="message in messages">
@@ -61,13 +74,20 @@
       @click="cheerPresenter"
       >응원 <br />하기</v-btn
     >
-    <div class="confetti-area"></div>
   </v-sheet>
 </template>
 
 <script>
 export default {
   name: "session",
+  mounted() {
+    const myPoint = localStorage.getItem("myPoint");
+    if (myPoint && myPoint >= 0) {
+      this.myPoint = myPoint;
+    } else {
+      localStorage.setItem("myPoint", this.myPoint);
+    }
+  },
   methods: {
     cheerPresenter() {
       confetti({
@@ -75,15 +95,21 @@ export default {
         spread: 60,
         origin: {
           y: 0.8,
-          x: 0.8,
+          x: this.$vuetify.breakpoint.smAndUp ? 0.6 : 0.8,
         },
       });
+
+      this.myPoint = Number(this.myPoint) + Math.floor(Math.random() * 10);
+      this.setMyPoint();
+    },
+    setMyPoint() {
+      localStorage.setItem("myPoint", this.myPoint);
     },
     submitChatMessage() {
       if (!this.message) {
         return;
       }
-      if (this.messages.length > 3) {
+      if (this.messages.length > 2) {
         this.messages.splice(0, 1);
       }
       this.messages.push(this.message);
@@ -92,6 +118,7 @@ export default {
   },
   data() {
     return {
+      myPoint: 1000,
       message: "",
       messages: [],
     };
@@ -118,13 +145,6 @@ export default {
   bottom: 140px;
   right: 6%;
   z-index: 101;
-}
-
-.confetti-area {
-  position: fixed;
-  bottom: 0;
-  height: 300px;
-  width: 80%;
 }
 
 .chat-submit-button {
@@ -154,5 +174,11 @@ export default {
 
 .cheer-up-button {
   font-family: hanna, "Roboto", sans-serif !important;
+}
+
+.my-points {
+  position: absolute;
+  right: 6%;
+  top: 48px;
 }
 </style>

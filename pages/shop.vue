@@ -48,13 +48,15 @@ export default {
     if (myPoint && myPoint >= 0) {
       this.myPoint = myPoint;
     } else {
-      localStorage.setItem("point", this.myPoint);
+      localStorage.setItem("myPoint", this.myPoint);
     }
   },
   methods: {
     buyItem(index) {
       if (this.items[index].price > this.myPoint) {
-        alert("금액이 부족합니다.");
+        alert(
+          "금액이 부족합니다. 라이브 세션에서 응원으로 포인트를 모아보세요 🎉"
+        );
         return;
       }
       this.myPoint = this.myPoint - this.items[index].price;
@@ -78,7 +80,7 @@ export default {
       }, 3000);
     },
     setMyPoint() {
-      localStorage.setItem("point", this.myPoint);
+      localStorage.setItem("myPoint", this.myPoint);
     },
   },
   data() {
