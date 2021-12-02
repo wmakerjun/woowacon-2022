@@ -1,0 +1,36 @@
+.w-100 {
+  width: 100%;
+}
+.root-for-button {
+  width: 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.w-100vw {
+  width: 100vw;
+}
+
+.full-height {
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: end;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  max-width: 540px;
+}
