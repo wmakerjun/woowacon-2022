@@ -1,6 +1,6 @@
 <template>
   <v-sheet max-width="480px" height="100vh" color="#121212" class="relative">
-    <div class="d-flex justify-center align-start mt-16 w-100 h-100">
+    <div class="d-flex justify-center align-center w-100 h-100">
       <v-card color="transparent" elevation="0">
         <div class="d-flex justify-center">
           <v-avatar size="100">

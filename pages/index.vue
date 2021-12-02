@@ -41,7 +41,7 @@
         </v-avatar>
         응원포인트 샵
       </v-chip>
-      <v-card color="#494949" dark rounded>
+      <v-card color="#494949" dark rounded="xl">
         <div class="d-flex flex-no-wrap">
           <v-avatar class="ma-3" size="100" tile>
             <v-img src="/magic-stick.png"></v-img>
