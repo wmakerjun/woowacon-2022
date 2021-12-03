@@ -1,5 +1,5 @@
 <template>
-  <v-sheet max-width="480px" height="100vh" color="#121212" class="relative">
+  <v-sheet max-width="480px" height="100vh" color="#2d2d2d" class="relative">
     <iframe
       width="100%"
       height="100%"

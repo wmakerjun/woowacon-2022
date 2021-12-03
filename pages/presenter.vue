@@ -1,5 +1,5 @@
 <template>
-  <v-sheet max-width="480px" height="100vh" color="#121212" class="relative">
+  <v-sheet max-width="480px" height="100vh" color="#2d2d2d" class="relative">
     <div class="d-flex justify-center align-center w-100 h-100">
       <v-card color="transparent" elevation="0">
         <div class="d-flex justify-center">

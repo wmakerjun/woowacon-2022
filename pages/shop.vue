@@ -1,12 +1,12 @@
 <template>
-  <v-sheet max-width="480px" height="100vh" color="#121212" class="relative">
+  <v-sheet max-width="480px" height="100vh" color="#2d2d2d" class="relative">
     <div class="d-flex justify-center mt-12 mb-5">
       <nuxt-link to="/">
         <v-img max-width="150" src="/woowacon-main-logo.png" />
       </nuxt-link>
     </div>
-    <div class="d-flex justify-center mt-12 mb-5">
-      <v-card color="transparent" dark rounded>
+    <div class="d-flex justify-center my-6">
+      <v-card color="transparent" elevation="0" dark rounded>
         <div class="d-flex">
           <v-avatar size="75" tile>
             <v-img src="/coin2.png" />
